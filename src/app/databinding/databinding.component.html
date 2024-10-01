@@ -1,0 +1,75 @@
+<h2>Databinding!</h2>
+<div class="interpolacion">
+  <h3>{{ "Interpalación" }}</h3>
+  <ul>
+    <li>{{ "La suma de: " + (2 + 2) }}</li>
+    <li>{{ title }}</li>
+    <li>{{ getSuma(10, 10) }}</li>
+  </ul>
+</div>
+<div class="property">
+  <h3>Property Binding</h3>
+  <input type="text" [value]="title" />
+  <img [src]="imageUrl" alt="" />
+  <button [disabled]="isDisabled">Botón deshabilitado</button>
+
+  <div [class.active]="isActive">Este div tiene la clase "active"</div>
+
+  <div [style.background-color]="backgroundColor">Fondo dinámico</div>
+
+  <img
+    [src]="imageProperties.src"
+    [alt]="imageProperties.alt"
+    [width]="imageProperties.width"
+    [height]="imageProperties.height"
+  />
+</div>
+
+<div class="event">
+  <div>
+    <h3>Event Binding - event click</h3>
+    <button (click)="hanbleClick()">Enviar</button>
+    {{ message }}
+  </div>
+  <div>
+    <h3>Event Binding - event input</h3>
+    <input type="text" (input)="onInputChange($event)" />
+    {{ userInput }}
+  </div>
+  <div>
+    <h3>Event Binding - event keyup</h3>
+    <input (keyup)="onKeyUp($event)" placeholder="Presiona cualquier tecla" />
+    <p>{{ keyMessage }}</p>
+  </div>
+  <div>
+    <h3>Event Binding - preventDefault</h3>
+    <form (submit)="onSubmit($event)">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Event Binding - change</h3>
+    <input type="checkbox" (change)="onCheckboxChange($event)" />
+    <p>Checkbox marcado: {{ isChecked }}</p>
+    <input type="text" (change)="onInputChange($event)" />
+    {{ userInput }}
+  </div>
+  <div>
+    <h3>Event Binding - mouseout & mouseover</h3>
+    <p>{{ hoverMessage }}</p>
+    <img
+      [src]="imageUrl"
+      (mouseover)="onMouseOver()"
+      (mouseout)="onMouseOut()"
+    />
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio corrupti
+      consequuntur autem. Qui beatae itaque molestias assumenda, unde in vitae
+      recusandae aliquam, dolorum earum cupiditate quae ipsam, odio blanditiis
+      distinctio!
+    </p>
+  </div>
+</div>

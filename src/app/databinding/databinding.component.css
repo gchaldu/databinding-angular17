@@ -1,0 +1,18 @@
+.interpolacion {
+  background-color: rgb(181, 252, 252);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.property {
+  background-color: rgb(209, 167, 250);
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.event {
+  background-color: rgb(247, 211, 185);
+}

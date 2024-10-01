@@ -1,0 +1,23 @@
+<h1>Ejemplo de Two-Way Data Binding</h1>
+<!-- El input utiliza ngModel para el two-way binding -->
+<input type="text" [(ngModel)]="nombre" placeholder="Escribe tu nombre" />
+
+<!-- El valor ingresado en el input se refleja automáticamente -->
+<p>Hola, {{ nombre }}!</p>
+
+<form>
+  <label for="">Nombre</label>
+  <input
+    type="text"
+    [(ngModel)]="persona.nombre"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <label for="">Email</label>
+  <input
+    type="email"
+    [(ngModel)]="persona.email"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <br /><br />
+  {{ persona | json }}
+</form>
